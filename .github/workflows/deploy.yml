@@ -24,22 +24,3 @@ jobs:
           remote_host: ${{ secrets.HOST }}
           remote_user: ${{ secrets.USERNAME }}
           remote_key: ${{ secrets.SSH_KEY }}
-# jobs:
-#   deploy:
-#     runs-on: ubuntu-latest
-#     steps:
-#       - name: Deploy with pm2
-#         uses: appleboy/ssh-action@master
-#         with:
-#           host: ${{ secrets.HOST }}
-#           username: ${{ secrets.USERNAME }}
-#           key: ${{ secrets.SSH_KEY }}
-#           script: |
-#             pm2 stop apis-docs
-#             rm -rf /var/www/apis-docs
-#             git clone --depth 1 git@github.com:codante-io/apis-docs.git /var/www/apis-docs
-
-#             cd /var/www/apis-docs
-#             npm install
-#             npm run build
-#             pm2 restart apis-docs
