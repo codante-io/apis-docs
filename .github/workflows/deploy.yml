@@ -9,6 +9,13 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/cache@v4
+        with:
+          path: ~/.bun-cache
+          key: ${{ runner.os }}-bun-${{ hashFiles('**/bun.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-bun-
+
       - uses: actions/checkout@v4
       - uses: oven-sh/setup-bun@v1
 
