@@ -15,9 +15,10 @@ jobs:
             ~/.npm
             ~/.bun
             ${{ github.workspace }}/.next/cache
-          key: ${{ runner.os }}-bun-${{ hashFiles('**/package-lock.json') }}-${{ hashFiles('**/*.js', '**/*.jsx', '**/*.ts', '**/*.tsx') }}
+          key: ${{ runner.os }}-nextjs-${{ hashFiles('**/bun.lockb') }}-${{ hashFiles('**/package.json') }}
           restore-keys: |
-            ${{ runner.os }}-bun-${{ hashFiles('**/package-lock.json') }}-
+            ${{ runner.os }}-nextjs-${{ hashFiles('**/bun.lockb') }}
+            ${{ runner.os }}-nextjs-
 
       - uses: actions/checkout@v4
       - uses: oven-sh/setup-bun@v1
