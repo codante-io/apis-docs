@@ -1,8 +1,9 @@
 export function Logo(props: React.ComponentPropsWithoutRef<'svg'>) {
   return (
     <svg
-      width="163"
-      height="66"
+      width="130
+      "
+      height="53"
       viewBox="0 0 326 132"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
