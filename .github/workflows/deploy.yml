@@ -20,6 +20,6 @@ jobs:
             git clone --depth 1 git@github.com:codante-io/apis-docs.git /var/www/apis-docs
 
             cd /var/www/codante-changelog
-            pnpm install
-            pnpm run build
+            npm install
+            npm run build
             pm2 restart codante-changelog
