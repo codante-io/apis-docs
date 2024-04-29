@@ -19,7 +19,7 @@ jobs:
             rm -rf /var/www/apis-docs
             git clone --depth 1 git@github.com:codante-io/apis-docs.git /var/www/apis-docs
 
-            cd /var/www/codante-changelog
+            cd /var/www/apis-docs
             npm install
             npm run build
             pm2 restart apis-docs
