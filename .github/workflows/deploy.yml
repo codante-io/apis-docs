@@ -9,17 +9,37 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Deploy with pm2
-        uses: appleboy/ssh-action@master
-        with:
-          host: ${{ secrets.HOST }}
-          username: ${{ secrets.USERNAME }}
-          key: ${{ secrets.SSH_KEY }}
-          script: |
-            rm -rf /var/www/apis-docs
-            git clone --depth 1 git@github.com:codante-io/apis-docs.git /var/www/apis-docs
+      - uses: actions/checkout@v4
+      - uses: oven-sh/setup-bun@v1
 
-            cd /var/www/apis-docs
-            npm install
-            npm run build
-            pm2 restart apis-docs
+      - run: bun install
+      - run: bun run build
+
+      - name: Deploy with rsync
+        uses: burnett01/rsync-deployments@5.2
+        with:
+          switches: -avzr --quiet --delete
+          path: ./out/
+          remote_path: /var/www/apis-docs
+          remote_host: ${{ secrets.HOST }}
+          remote_user: ${{ secrets.USERNAME }}
+          remote_key: ${{ secrets.SSH_KEY }}
+# jobs:
+#   deploy:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: Deploy with pm2
+#         uses: appleboy/ssh-action@master
+#         with:
+#           host: ${{ secrets.HOST }}
+#           username: ${{ secrets.USERNAME }}
+#           key: ${{ secrets.SSH_KEY }}
+#           script: |
+#             pm2 stop apis-docs
+#             rm -rf /var/www/apis-docs
+#             git clone --depth 1 git@github.com:codante-io/apis-docs.git /var/www/apis-docs
+
+#             cd /var/www/apis-docs
+#             npm install
+#             npm run build
+#             pm2 restart apis-docs
