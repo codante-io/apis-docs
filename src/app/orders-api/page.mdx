@@ -296,3 +296,72 @@ Este endpoint permite que você apague uma entrada. Caso o pedido não exista, u
 
   </Col>
 </Row>
+
+---
+
+## Criar Pedido {{ tag: 'POST', label: '/orders-api/orders' }}
+
+<Row>
+  <Col>
+
+  Este endpoint permite que você crie um novo pedido. O valor do pedido deve ser fornecido em centavos. Caso o pedido seja criado com sucesso, um código de status 201 será retornado. Caso contrário, um código de status 422 será retornado.
+
+  ### Parâmetros
+
+  <Properties>
+    <Property name="customer_name" type="string">
+      Nome completo do cliente que realizou o pedido.
+    </Property>
+    <Property name="customer_email" type="string">
+      Email do cliente que realizou o pedido.
+    </Property>
+    <Property name="order_date" type="timestamp">
+      Data do pedido.
+    </Property>
+    <Property name="amount_in_cents" type="integer">
+      Valor do pedido em centavos.
+    </Property>
+    <Property name="status" type="string">
+      Status do pedido. Pode ser `completed` ou `pending`.
+    </Property>
+  </Properties>
+
+
+
+  </Col>
+
+
+  <Col sticky>
+
+  <CodeGroup title="Request" tag="POST" label="/orders-api/orders">
+
+    ```bash {{ title: 'cURL' }}
+    curl -X "POST" https://apis.codante.io/api/orders-api/orders \
+      -d "customer_name=Benjamin Pacheco" \
+      -d "customer_email=benjamin@example.com" \
+      -d "order_date=2022-09-24" \
+      -d "amount_in_cents=9916" \
+      -d "status=completed"
+    ```
+
+    ```js
+    const response = await fetch('https://apis.codante.io/api/orders-api/orders', {
+      method: 'POST',
+      body: JSON.stringify({
+        customer_name: 'Benjamin Pacheco',
+        customer_email: 'benjamin@example.com',
+        order_date: '2022-09-24',
+        amount_in_cents: 9916,
+        status: 'completed'
+      })
+    })
+
+    const orders = await response.json()
+    ```
+
+
+    </CodeGroup>
+  </Col>
+</Row>
+
+
