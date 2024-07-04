@@ -76,8 +76,20 @@ Caso os dados estejam corretos, a API retornará um objeto JSON com a mensagem `
     <CodeGroup title="Request" tag="GET" label="/orders-api/orders">
 
     ```bash {{ title: 'cURL' }}
-    curl -G https://apis.codante.io/api/orders-api/orders \
-      -d page=1
+    curl -X POST https://apis.codante.io/api/register-user/register \
+      -H "Content-Type: application/json" \
+      -d '{
+      "name": "Benjamin Pacheco",
+      "email": "teste@teste.com",
+      "password": "123456",
+      "password_confirmation": "123456",
+      "cpf": "123.456.789-00",
+      "phone": "(11) 99999-9999",
+      "zipcode": "12345-678",
+      "address": "Rua Teste",
+      "city": "São Paulo",
+      "terms": true
+      }'
     ```
 
     ```js
