@@ -42,20 +42,20 @@ const resources: Array<Resource> = [
       ],
     },
   },
-  // {
-  //   href: '/conversations',
-  //   name: 'Conversations',
-  //   description:
-  //     'Learn about the conversation model and how to create, retrieve, update, delete, and list conversations.',
-  //   icon: ChatBubbleIcon,
-  //   pattern: {
-  //     y: -6,
-  //     squares: [
-  //       [-1, 2],
-  //       [1, 3],
-  //     ],
-  //   },
-  // },
+  {
+    href: '/register-user',
+    name: 'Api de Cadastro de Usuário',
+    description:
+      'Um endpoint simples para validar e simular o cadastro de usuários em sua aplicação.',
+    icon: UserIcon,
+    pattern: {
+      y: -6,
+      squares: [
+        [-1, 2],
+        [1, 3],
+      ],
+    },
+  },
   // {
   //   href: '/messages',
   //   name: 'Messages',

@@ -246,6 +246,7 @@ export const navigation: Array<NavGroup> = [
     links: [
       // { title: 'Frases Motivacionais', href: '/frases-motivacionais' },
       { title: 'Orders API (Pedidos)', href: '/orders-api' },
+      { title: 'API de Cadastro de Usuário', href: '/register-user' },
     ],
   },
 ]
