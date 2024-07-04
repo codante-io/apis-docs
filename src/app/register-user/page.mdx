@@ -31,6 +31,8 @@ A URL base para a API de pedidos do Codante.io é `https://apis.codante.io/api/r
 
 Este é o único endpoint da API e irá validar os dados de cadastro bem como simular um cadastro caso os dados estejam corretos.
 
+Caso os dados estejam corretos, a API retornará um objeto JSON com a mensagem `User registered.` bem como os dados do usuário cadastrado em um objeto `user`. Caso contrário, a API retornará erro `422`.
+
     ### Atributos obrigatórios
 
     <Properties>
