@@ -251,7 +251,13 @@ export const navigation: Array<NavGroup> = [
   },
   {
     title: '🥇 Jogos Olímpicos 2024',
-    links: [{ title: 'API Jogos Olímpicos 2024', href: '/olympic-games' }],
+    links: [
+      { title: 'API Jogos Olímpicos 2024', href: '/olympic-games' },
+      {
+        title: 'Olympics 2024 API (english)',
+        href: '/olympic-games-english',
+      },
+    ],
   },
 ]
 
