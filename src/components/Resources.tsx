@@ -67,6 +67,17 @@ const resources: Array<Resource> = [
       squares: [[0, 1]],
     },
   },
+  {
+    href: '/olympic-games-english',
+    name: 'Olympics 2025 API (English)',
+    description:
+      'Full data for events, venues, countries and games for Olympics 2024',
+    icon: BoltIcon,
+    pattern: {
+      y: 22,
+      squares: [[0, 1]],
+    },
+  },
   // {
   //   href: '/messages',
   //   name: 'Messages',
