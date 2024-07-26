@@ -249,6 +249,10 @@ export const navigation: Array<NavGroup> = [
       { title: 'API de Cadastro de Usuário', href: '/register-user' },
     ],
   },
+  {
+    title: '🥇 Jogos Olímpicos 2024',
+    links: [{ title: 'API Jogos Olímpicos 2024', href: '/olympic-games' }],
+  },
 ]
 
 export function Navigation(props: React.ComponentPropsWithoutRef<'nav'>) {

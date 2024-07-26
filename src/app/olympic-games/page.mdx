@@ -1,0 +1,355 @@
+export const metadata = {
+  title: 'Olympic Games - 2024 - API',
+  description: 'Aprenda sobre a API dos jogos olímpicos 2024.',
+}
+
+# Olympic Games - 2024 - API
+
+A API de Jogos Olímpicos é uma API que traz os dados reais dos jogos olímpicos. Ela é utilizada pelo Mini Projeto [Codante](https://codante.io) .{{ className: 'lead' }}
+
+Trata-se de uma série de endpoints que fornecem informações sobre os eventos, locais, disciplinas e países participantes dos Jogos Olímpicos.{{ className: 'lead' }}
+
+> A API de Jogos Olímpicos do Codante.io é uma API pública e gratuita. Ela é atualizada em tempo real (5 minutos de atraso) com os dados dos jogos olímpicos de 2024.
+
+## Autenticação
+
+A API de jogos olímpicos do Codante.io não requer autenticação para acessar os endpoints.
+
+## Rate Limit
+
+A API de Jogos Olímpicos do Codante.io possui um limite de taxa de 100 solicitações por minuto. Se você exceder esse limite, receberá um código de status 429. O uso indiscriminado também poderá levar ao bloqueio do seu IP.
+
+## Base URL
+
+A URL base para a API de pedidos do Codante.io é `https://apis.codante.io/olympic-games`.
+
+---
+
+## Lista de Jogos/Eventos {{ tag: 'GET', label: '/events' }}
+
+Este é o endpoint principal da API. Lista todos os eventos, com opções de filtro. Traz, para cada evento os competidores, o local, a data, o nome do evento, a flag se o evento está acontecendo agora, dentre outros. 
+
+<Row>
+  <Col>
+
+  ### Atributos opcionais
+
+<Properties>
+    <Property name="country" type="string">
+      Filtra por país usando código de 3 letras (ex: "BRA"). Para a lista completa, vide endpoint `countries`.
+    </Property>
+    <Property name="discipline" type="string">
+      Filtra por disciplina/esporte usando código de 3 letras. Para a lista completa, vide endpoint `disciplines`.
+    </Property>
+    <Property name="venue" type="string">
+      Filtra por local usando código de 3 letras. Para a lista completa, vide endpoint `venues`.
+    </Property>
+    <Property name="date" type="string">
+      Filtra por data (YYYY-MM-DD).
+    </Property>
+    <Property name="competitor" type="string">
+      Filtra por nome do competidor ou nome da equipe em casos de jogos de equipes.
+    </Property>
+  </Properties>
+
+  </Col>
+  <Col sticky>
+
+  <CodeGroup title="Request" tag="GET" label="/events">
+
+  ```bash {{ title: 'cURL' }}
+    curl -G https://apis.codante.io/olympic-games/events \
+      -d page=1
+  ```
+
+  ```js
+    const response = await fetch('https://apis.codante.io/olympic-games/events')
+    const orders = await response.json()
+  ```
+  </CodeGroup>
+
+
+    ```json {{ title: 'Response' }}
+    {
+      "data": [
+      {
+        "id": 3407,
+        "day": "2024-07-24",
+        "discipline_name": "Football",
+        "discipline_pictogram": "https://codante.s3.amazonaws.com/codante-apis/olympic-games/pictograms/FBL.avif",
+        "name": null,
+        "venue_name": "Geoffroy-Guichard Stadium",
+        "event_name": "Men",
+        "detailed_event_name": "Men's Group B",
+        "start_date": "2024-07-24T15:00:00+02:00",
+        "end_date": "2024-07-24T16:45:00+02:00",
+        "status": "Finished",
+        "is_medal_event": 0,
+        "is_live": 0,
+        "competitors": [
+          {
+            "country_id": "Argentina",
+            "country_flag_url": "https://codante.s3.amazonaws.com/codante-apis/olympic-games/flags/ARG.png",
+            "competitor_name": "Argentina",
+            "position": 0,
+            "result_position": "",
+            "result_winnerLoserTie": "L",
+            "result_mark": "1"
+          },
+          {
+            "country_id": "Marrocos",
+            "country_flag_url": "https://codante.s3.amazonaws.com/codante-apis/olympic-games/flags/MAR.png",
+            "competitor_name": "Morocco",
+            "position": 1,
+            "result_position": "",
+            "result_winnerLoserTie": "W",
+            "result_mark": "2"
+          }
+        ]
+      },
+      ...
+    ],
+      "links": {
+        "first": "...",
+        "last": "...",
+        "prev": "...",
+        "next": "..."
+      },
+      "meta": {
+        "current_page": 1,
+        "from": 1,
+        "last_page": 10,
+        "path": "...",
+        "per_page": 10,
+        "to": 10,
+        "total": 100
+      }
+    }
+    ```
+
+  </Col>
+</Row>
+
+---
+
+## Jogo por ID {{ tag: 'GET', label: '/events/{id}' }}
+
+Exibe detalhes de um evento específico pelo ID.
+
+<Row>
+  <Col>
+  </Col>
+
+  <Col sticky>
+
+  <CodeGroup title="Request" tag="GET" label="/events/{id}">
+
+  ```bash {{ title: 'cURL' }}
+    curl -G https://apis.codante.io/olympic-games/events/1 \
+      -d page=1
+  ```
+
+  ```js
+    const response = await fetch('https://apis.codante.io/olympic-games/events/1')
+    const orders = await response.json()
+  ```
+  </CodeGroup>
+
+
+    ```json {{ title: 'Response' }}
+    {
+      "data": {
+        "id": 3407,
+        "day": "2024-07-24",
+        "discipline_name": "Football",
+        "discipline_pictogram": "https://codante.s3.amazonaws.com/codante-apis/olympic-games/pictograms/FBL.avif",
+        "name": null,
+        "venue_name": "Geoffroy-Guichard Stadium",
+        "event_name": "Men",
+        "detailed_event_name": "Men's Group B",
+        "start_date": "2024-07-24T15:00:00+02:00",
+        "end_date": "2024-07-24T16:45:00+02:00",
+        "status": "Finished",
+        "is_medal_event": 0,
+        "is_live": 0,
+        "competitors": [
+          {
+            "country_id": "Argentina",
+            "country_flag_url": "https://codante.s3.amazonaws.com/codante-apis/olympic-games/flags/ARG.png",
+            "competitor_name": "Argentina",
+            "position": 0,
+            "result_position": "",
+            "result_winnerLoserTie": "L",
+            "result_mark": "1"
+          },
+          {
+            "country_id": "Marrocos",
+            "country_flag_url": "https://codante.s3.amazonaws.com/codante-apis/olympic-games/flags/MAR.png",
+            "competitor_name": "Morocco",
+            "position": 1,
+            "result_position": "",
+            "result_winnerLoserTie": "W",
+            "result_mark": "2"
+          }
+        ]
+      },
+    }
+    ```
+
+  </Col>
+</Row>
+
+---
+
+### List Venues {{ tag: 'GET', label: '/venues' }}
+
+Lista todos os locais dos eventos. Traz o nome e a URL oficial do local.
+
+<Row>
+  <Col>
+  </Col>
+  <Col sticky>
+
+<CodeGroup title="Request" tag="GET" label="/venues">
+
+  ```bash {{ title: 'cURL' }}
+    curl -G https://apis.codante.io/olympic-games/venues
+  ```
+
+  ```js
+    const response = await fetch('https://apis.codante.io/olympic-games/venues')
+    const orders = await response.json()
+  ```
+  </CodeGroup>
+  #### Response
+    ```json {{title: 'Response'}}
+    {
+      "data": [
+        {
+          "id": "AQC",
+          "name": "Aquatics Centre",
+          "url": "https://olympics.com/en/paris-2024/venues/aquatics-centre"
+        },
+        {
+          "id": "BCY",
+          "name": "Bercy Arena",
+          "url": "https://olympics.com/en/paris-2024/venues/bercy-arena"
+        },
+      ...
+    ]
+  }
+    ```
+
+  </Col>
+</Row>
+
+---
+
+## Lista de Esportes {{ tag: 'GET', label: '/disciplines' }}
+
+Lista todas as disciplinas (esportes). Traz os pictogramas (ícones) de cada esporte.
+
+<Row>
+  <Col>
+  </Col>
+  <Col sticky>
+
+<CodeGroup title="Request" tag="GET" label="/disciplines">
+
+  ```bash {{ title: 'cURL' }}
+    curl -G https://apis.codante.io/olympic-games/disciplines
+  ```
+
+  ```js
+    const response = await fetch('https://apis.codante.io/olympic-games/disciplines')
+    const orders = await response.json()
+  ```
+  </CodeGroup>
+  #### Response
+    ```json {{title: 'Response'}}
+    {
+      "data": [
+        {
+          "id": "BK3",
+          "name": "3x3 Basketball",
+          "pictogram_url": "https://codante.s3.amazonaws.com/codante-apis/olympic-games/pictograms/BK3.avif"
+        },
+        {
+          "id": "ARC",
+          "name": "Archery",
+          "pictogram_url": "https://codante.s3.amazonaws.com/codante-apis/olympic-games/pictograms/ARC.avif"
+        },
+        ...
+      ]
+    }
+    ```
+
+  </Col>
+</Row>
+
+
+---
+
+## Lista de Países {{ tag: 'GET', label: '/countries' }}
+
+Lista todos os países participantes. Traz as bandeiras de cada um dos países. 
+
+<Row>
+  <Col>
+  </Col>
+  <Col sticky>
+
+  <CodeGroup title="Request" tag="GET" label="/countries">
+
+  ```bash {{ title: 'cURL' }}
+    curl -G https://apis.codante.io/olympic-games/countries
+  ```
+
+  ```js
+    const response = await fetch('https://apis.codante.io/olympic-games/countries')
+    const orders = await response.json()
+  ```
+  </CodeGroup>
+
+  #### Response
+    ```json {{ title: 'Response' }}
+    {
+      "data": [
+        {
+          "id": "AFG",
+          "name": "Afeganistão",
+          "continent": "ASI",
+          "flag_url": "https://codante.s3.amazonaws.com/codante-apis/olympic-games/flags/AFG.png"
+        },
+        {
+          "id": "RSA",
+          "name": "África do Sul",
+          "continent": "AFR",
+          "flag_url": "https://codante.s3.amazonaws.com/codante-apis/olympic-games/flags/RSA.png"
+        },
+        ...
+      ],
+      "links": {
+        "first": "...",
+        "last": "...",
+        "prev": "...",
+        "next": "..."
+      },
+      "meta": {
+        "current_page": 1,
+        "from": 1,
+        "last_page": 10,
+        "path": "...",
+        "per_page": 20,
+        "to": 20,
+        "total": 200
+      }
+    }
+    ```
+
+  </Col>
+</Row>
+
+---
+
+

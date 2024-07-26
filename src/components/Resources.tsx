@@ -15,6 +15,7 @@ import { EnvelopeIcon } from '@/components/icons/EnvelopeIcon'
 import { UserIcon } from '@/components/icons/UserIcon'
 import { UsersIcon } from '@/components/icons/UsersIcon'
 import { CartIcon } from './icons/CartIcon'
+import { BoltIcon } from './icons/BoltIcon'
 
 interface Resource {
   href: string
@@ -54,6 +55,16 @@ const resources: Array<Resource> = [
         [-1, 2],
         [1, 3],
       ],
+    },
+  },
+  {
+    href: '/olympic-games',
+    name: 'Api dos Jogos Olímpicos',
+    description: 'Dados dos Jogos Olímpicos de Paris 2024',
+    icon: BoltIcon,
+    pattern: {
+      y: 22,
+      squares: [[0, 1]],
     },
   },
   // {
