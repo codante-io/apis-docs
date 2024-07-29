@@ -290,10 +290,11 @@ Lists all disciplines (sports). It brings the pictograms (icons) of each sport.
 
 ---
 
-## List of Countries {{ tag: 'GET', label: '/countries' }}
+## List of Medals and Countries {{ tag: 'GET', label: '/countries' }}
 
-Lists all participating countries. It brings the flags of each country.
+List all participating countries ordered by the medal ranking. Include the flags of each country as well as the quantities of gold, silver, bronze, and total medals.
 
+Also provide two rankings: the official ranking determined by the type of medals (`rank`) - and the ranking of medals by total medals (`rank_total_medals`).
 <Row>
   <Col>
   </Col>
@@ -316,16 +317,28 @@ Lists all participating countries. It brings the flags of each country.
     {
       "data": [
         {
-          "id": "AFG",
-          "name": "Afghanistan",
+          "id": "KOR",
+          "name": "República da Coréia",
           "continent": "ASI",
-          "flag_url": "https://codante.s3.amazonaws.com/codante-apis/olympic-games/flags/AFG.png"
+          "flag_url": "https:\/\/codante.s3.amazonaws.com\/codante-apis\/olympic-games\/flags\/KOR.png",
+          "gold_medals": 5,
+          "silver_medals": 3,
+          "bronze_medals": 1,
+          "total_medals": 9,
+          "rank": 1,
+          "rank_total_medals": 4
         },
         {
-          "id": "RSA",
-          "name": "South Africa",
-          "continent": "AFR",
-          "flag_url": "https://codante.s3.amazonaws.com/codante-apis/olympic-games/flags/RSA.png"
+          "id": "JPN",
+          "name": "Japão",
+          "continent": "ASI",
+          "flag_url": "https:\/\/codante.s3.amazonaws.com\/codante-apis\/olympic-games\/flags\/JPN.png",
+          "gold_medals": 5,
+          "silver_medals": 2,
+          "bronze_medals": 4,
+          "total_medals": 11,
+          "rank": 2,
+          "rank_total_medals": 3
         },
         ...
       ],
