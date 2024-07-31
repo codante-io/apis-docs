@@ -27,7 +27,7 @@ The base URL for the Codante.io request API is `https://apis.codante.io/olympic-
 
 ## List of Games/Events {{ tag: 'GET', label: '/events' }}
 
-This is the main endpoint of the API. Lists all events, with filtering options. It brings, for each event, the competitors, the venue, the date, the name of the event, the flag if the event is happening now, among others.
+This is the main endpoint of the API. Lists all events, with filtering options. It brings, for each event, the competitors, the venue, the date, the name of the event, the flag if the event is happening now, among others. The list is paginated and can be filtered by country, discipline, venue, date, competitor and page.
 
 <Row>
   <Col>
@@ -49,6 +49,9 @@ This is the main endpoint of the API. Lists all events, with filtering options. 
     </Property>
     <Property name="competitor" type="string">
       Filter by competitor name or team name in case of team games.
+    </Property>
+    <Property name="page" type="integer">
+      Page number. Default is 1.
     </Property>
   </Properties>
 

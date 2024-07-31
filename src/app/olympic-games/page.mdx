@@ -27,7 +27,7 @@ A URL base para a API de pedidos do Codante.io é `https://apis.codante.io/olymp
 
 ## Lista de Jogos/Eventos {{ tag: 'GET', label: '/events' }}
 
-Este é o endpoint principal da API. Lista todos os eventos, com opções de filtro. Traz, para cada evento os competidores, o local, a data, o nome do evento, a flag se o evento está acontecendo agora, dentre outros. 
+Este é o endpoint principal da API. Lista todos os eventos, com opções de filtro. Traz, para cada evento os competidores, o local, a data, o nome do evento, a flag se o evento está acontecendo agora, dentre outros. Esse endpoint é paginado e traz 10 eventos por página.
 
 <Row>
   <Col>
@@ -49,6 +49,9 @@ Este é o endpoint principal da API. Lista todos os eventos, com opções de fil
     </Property>
     <Property name="competitor" type="string">
       Filtra por nome do competidor ou nome da equipe em casos de jogos de equipes.
+    </Property>
+      <Property name="page" type="number">
+      Filtra por página. Padrão é 1.
     </Property>
   </Properties>
 
