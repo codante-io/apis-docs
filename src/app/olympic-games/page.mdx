@@ -41,6 +41,9 @@ Este é o endpoint principal da API. Lista todos os eventos, com opções de fil
     <Property name="discipline" type="string">
       Filtra por disciplina/esporte usando código de 3 letras. Para a lista completa, vide endpoint `disciplines`.
     </Property>
+    <Property name="gender" type="string">
+      Filtra por gênero usando código de 1 letra (ex: "M"). Lista dos gêneros disponíveis `M``W``X``O`.
+    </Property>
     <Property name="venue" type="string">
       Filtra por local usando código de 3 letras. Para a lista completa, vide endpoint `venues`.
     </Property>
@@ -89,6 +92,7 @@ Este é o endpoint principal da API. Lista todos os eventos, com opções de fil
         "status": "Finished",
         "is_medal_event": 0,
         "is_live": 0,
+        "gender_code": "M",
         "competitors": [
           {
             "country_id": "Argentina",
