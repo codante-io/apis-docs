@@ -1,0 +1,40 @@
+export const metadata = {
+  title: 'Olympic Games - 2024 - API',
+  description: 'Learn about the 2024 Olympic Games API.',
+}
+
+# Atletas Brasileiros - Database
+
+Seguindo o buzz das Olimpíadas 2024, o Codante.io também está disponibilizando uma base de dados com informações sobre os atletas olímpicos e paralímpicos. A base de dados é no formato `.sql` e pode ser baixada gratuitamente.
+
+Você pode explorar, testar e desenvolver aplicações com os dados dos atletas brasileiros que estão competindo nas Olimpíadas de 2024. Ou também participar do [Mini Projeto](https://codante.io/mini-projetos/siga-seu-atleta) que utiliza essa base de dados no Codante. 
+
+
+## Download
+
+Para baixar a base de dados, clique em algum dos links abaixo:
+
+- [Download Link](https://assets.codante.io/codante-apis/atletas-brasileiros/dump-with-tables.sql) - Base de dados completa
+- [Download Link](https://assets.codante.io/codante-apis/atletas-brasileiros/dump.sql) - Base de dados apenas com os dados (não há criação de tabelas)
+
+## Estrutura
+
+
+### Tabelas
+
+- **Sport**: Armazena informações sobre as modalidades esportivas, incluindo código, nome e se é paralímpico.
+- **Athlete**: Armazena informações sobre os atletas, incluindo nome, esporte praticado, se é paralímpico e informações do Instagram.
+Relações:
+
+A tabela `Athlete` possui uma chave estrangeira (`sportId`) que se relaciona com a chave primária (`id`) da tabela Sport. Essa relação indica a modalidade esportiva que o atleta pratica.
+
+### Conteúdo
+
+As tabelas `Sport` e `Athlete` contêm dados sobre 52 esportes e 519 atletas, respectivamente.
+
+
+Para cada atleta, são armazenados dados como nome, esporte, se é paralímpico, informações do Instagram e data de atualização. 
+
+Para cada esporte, são armazenados código, nome e se é paralímpico.
+
+---

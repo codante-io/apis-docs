@@ -259,6 +259,12 @@ export const navigation: Array<NavGroup> = [
       },
     ],
   },
+  {
+    title: '🇧🇷 Atletas Brasileiros - Database',
+    links: [
+      { title: 'Atletas Brasileiros - DB', href: '/atletas-brasileiros' },
+    ],
+  },
 ]
 
 export function Navigation(props: React.ComponentPropsWithoutRef<'nav'>) {

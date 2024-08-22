@@ -8,6 +8,8 @@ import {
   useMotionValue,
 } from 'framer-motion'
 
+import { MdOutlineSportsHandball } from 'react-icons/md'
+
 import { GridPattern } from '@/components/GridPattern'
 import { Heading } from '@/components/Heading'
 import { ChatBubbleIcon } from '@/components/icons/ChatBubbleIcon'
@@ -73,6 +75,17 @@ const resources: Array<Resource> = [
     description:
       'Full data for events, venues, countries and games for Olympics 2024',
     icon: BoltIcon,
+    pattern: {
+      y: 22,
+      squares: [[0, 1]],
+    },
+  },
+  {
+    href: '/atletas-brasileiros',
+    name: 'Atletas Brasileiros',
+    description:
+      'Base de dados (SQL) de atletas olímpicos e paralímpicos brasileiros',
+    icon: MdOutlineSportsHandball,
     pattern: {
       y: 22,
       squares: [[0, 1]],
