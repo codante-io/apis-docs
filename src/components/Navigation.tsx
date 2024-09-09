@@ -245,8 +245,13 @@ export const navigation: Array<NavGroup> = [
     title: 'APIs do Codante',
     links: [
       // { title: 'Frases Motivacionais', href: '/frases-motivacionais' },
-      { title: 'Orders API (Pedidos)', href: '/orders-api' },
-      { title: 'API de Cadastro de Usuário', href: '/register-user' },
+      { title: '📦 Orders API (Pedidos)', href: '/orders-api' },
+      { title: '👥 API de Cadastro de Usuário', href: '/register-user' },
+      { title: '🇧🇷 Atletas Brasileiros - DB', href: '/atletas-brasileiros' },
+      {
+        title: '💸 Gastos dos Senadores do Brasil',
+        href: '/gastos-senadores',
+      },
     ],
   },
   {
@@ -257,12 +262,6 @@ export const navigation: Array<NavGroup> = [
         title: 'Olympics 2024 API (english)',
         href: '/olympic-games-english',
       },
-    ],
-  },
-  {
-    title: '🇧🇷 Atletas Brasileiros - Database',
-    links: [
-      { title: 'Atletas Brasileiros - DB', href: '/atletas-brasileiros' },
     ],
   },
 ]

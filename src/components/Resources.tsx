@@ -18,6 +18,9 @@ import { UserIcon } from '@/components/icons/UserIcon'
 import { UsersIcon } from '@/components/icons/UsersIcon'
 import { CartIcon } from './icons/CartIcon'
 import { BoltIcon } from './icons/BoltIcon'
+import { CiMoneyCheck1 } from 'react-icons/ci'
+import { FcMoneyTransfer } from 'react-icons/fc'
+import { PiMoneyWavyDuotone } from 'react-icons/pi'
 
 interface Resource {
   href: string
@@ -91,6 +94,20 @@ const resources: Array<Resource> = [
       squares: [[0, 1]],
     },
   },
+  {
+    href: '/gastos-senadores',
+    name: 'Gastos dos Senadores',
+    description:
+      'API com os gastos dos senadores do Brasil, com dados abertos e atualizados - incluindo partidos, estados e mais',
+    icon: PiMoneyWavyDuotone,
+    pattern: {
+      y: 32,
+      squares: [
+        [0, 2],
+        [1, 4],
+      ],
+    },
+  },
   // {
   //   href: '/messages',
   //   name: 'Messages',
@@ -120,8 +137,8 @@ const resources: Array<Resource> = [
 
 function ResourceIcon({ icon: Icon }: { icon: Resource['icon'] }) {
   return (
-    <div className="flex h-7 w-7 items-center justify-center rounded-full bg-zinc-900/5 ring-1 ring-zinc-900/25 backdrop-blur-[2px] transition duration-300 group-hover:bg-white/50 group-hover:ring-zinc-900/25 dark:bg-white/7.5 dark:ring-white/15 dark:group-hover:bg-blue-300/10 dark:group-hover:ring-blue-400">
-      <Icon className="h-5 w-5 fill-zinc-700/10 stroke-zinc-700 transition-colors duration-300 group-hover:stroke-zinc-900 dark:fill-white/10 dark:stroke-zinc-400 dark:group-hover:fill-blue-300/10 dark:group-hover:stroke-blue-400" />
+    <div className="flex h-7 w-7 items-center justify-center rounded-full bg-zinc-900/5 ring-1 ring-zinc-900/25 backdrop-blur-[2px] transition duration-300 group-hover:bg-white/50 group-hover:ring-zinc-900/25 dark:bg-white/7.5 dark:ring-white/30 dark:group-hover:bg-blue-300/10 dark:group-hover:ring-blue-400">
+      <Icon className="h-5 w-5 fill-zinc-700/10 stroke-zinc-700 transition-colors duration-300 group-hover:stroke-zinc-900 dark:fill-white/10 dark:stroke-zinc-400 dark:group-hover:fill-blue-300/50 dark:group-hover:stroke-blue-400" />
     </div>
   )
 }
