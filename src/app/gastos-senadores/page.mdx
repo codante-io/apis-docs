@@ -461,3 +461,203 @@ Lista todos os gastos realizados pelos senadores, com informações detalhadas s
   </Col>
 </Row>
 
+---
+
+## Gastos agregados por partido {{ tag: 'GET', label: '/summary/by-party' }}
+
+Este endpoint retorna um resumo dos gastos dos senadores, agrupados por partido político. Ele fornece o total de gastos de cada partido por ano, permitindo uma visão geral dos gastos de cada legenda no Senado.
+
+<Row>
+  <Col>
+  </Col>
+  <Col sticky>
+    <CodeGroup title="Request" tag="GET" label="/summary/by-party">
+
+      ```bash {{ title: 'cURL' }}
+        curl -G https://apis.codante.io/senator-expenses/summary/by-party
+      ```
+
+      ```js
+        const response = await fetch('https://apis.codante.io/senator-expenses/summary/by-party')
+        const senators = await response.json()
+      ```
+    </CodeGroup>
+
+    ```json {{ title: 'Response' }}
+    [
+      {
+        "year": "2024",
+        "data": [
+          {
+            "party": "PL",
+            "senator_ids": [
+              "42034",
+              "42177",
+              "42044",
+              "42174",
+              "42012",
+              "41664",
+              "42007",
+              "42164",
+              "42054",
+              "42147",
+              "42081",
+              "42197",
+              "41991",
+              "41977",
+              "42198",
+              "42208"
+            ],
+            "total_expenses": "2993135.9000000064",
+            "total_per_senator": 187070.9937500004
+          },
+          // ...  
+        ]
+      }
+    ]
+    ```
+  </Col>
+</Row>
+
+---
+
+## Gastos agregados por UF {{ tag: 'GET', label: '/summary/by-uf' }}
+
+Este endpoint retorna um resumo dos gastos dos senadores, agrupados por Unidade da Federação (UF). Ele fornece informações agregadas sobre o total de gastos em cada estado, permitindo uma visão geral da distribuição dos gastos dos senadores por região do país.
+
+<Row>
+  <Col>
+  </Col>
+  <Col sticky>
+    <CodeGroup title="Request" tag="GET" label="/summary/by-uf">
+
+      ```bash {{ title: 'cURL' }}
+        curl -G https://apis.codante.io/senator-expenses/summary/by-uf
+      ```
+
+      ```js
+        const response = await fetch('https://apis.codante.io/senator-expenses/summary/by-uf')
+        const senators = await response.json()
+      ```
+    </CodeGroup>
+
+    ```json {{ title: 'Response' }}
+    [
+      {
+        "year": "2024",
+        "data": [
+          {
+            "uf": "AP",
+            "total": "1009351.72"
+          },
+          {
+            "uf": "PE",
+            "total": "919376.5600000002"
+          },
+          {
+            "uf": "TO",
+            "total": "564585.9500000002"
+          },
+          {
+            "uf": "DF",
+            "total": "652850.1200000001"
+          },
+          {
+            "uf": "PI",
+            "total": "839865.660000001"
+          },
+          {
+            "uf": "SP",
+            "total": "599339.6200000006"
+          },
+          {
+            "uf": "ES",
+            "total": "471320.2700000001"
+          },
+          {
+            "uf": "PR",
+            "total": "438255.8599999996"
+          },
+          {
+            "uf": "PB",
+            "total": "849619.6799999999"
+          },
+          {
+            "uf": "SC",
+            "total": "834816.1500000013"
+          },
+          {
+            "uf": "RJ",
+            "total": "527517.3"
+          },
+          {
+            "uf": "RO",
+            "total": "818327.4000000004"
+          },
+          {
+            "uf": "BA",
+            "total": "880209.4900000003"
+          },
+          {
+            "uf": "MA",
+            "total": "722473.8000000004"
+          },
+          {
+            "uf": "RS",
+            "total": "756828.4299999996"
+          },
+          {
+            "uf": "MT",
+            "total": "673281.0700000002"
+          },
+          {
+            "uf": "MG",
+            "total": "403039.07"
+          },
+          {
+            "uf": "MS",
+            "total": "703043.9100000004"
+          },
+          {
+            "uf": "GO",
+            "total": "203140.14"
+          },
+          {
+            "uf": "PA",
+            "total": "921636.690000001"
+          },
+          {
+            "uf": "AC",
+            "total": "886059.0600000002"
+          },
+          {
+            "uf": "AM",
+            "total": "940200.3000000004"
+          },
+          {
+            "uf": "CE",
+            "total": "632622.4700000003"
+          },
+          {
+            "uf": "SE",
+            "total": "1078535.7499999995"
+          },
+          {
+            "uf": "RR",
+            "total": "817916.4400000002"
+          },
+          {
+            "uf": "AL",
+            "total": "680293.6799999998"
+          },
+          {
+            "uf": "RN",
+            "total": "785395.3799999999"
+          }
+        ]
+      },
+      // ...
+    ]
+    ```
+  </Col>
+</Row>
