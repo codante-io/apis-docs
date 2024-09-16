@@ -252,6 +252,7 @@ export const navigation: Array<NavGroup> = [
         title: '💸 Gastos dos Senadores do Brasil',
         href: '/gastos-senadores',
       },
+      { title: '⛳ Bandeiras dos Estados Brasileiros', href: '/bandeiras-dos-estados' },
     ],
   },
   {

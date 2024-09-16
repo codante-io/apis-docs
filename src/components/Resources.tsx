@@ -108,6 +108,17 @@ const resources: Array<Resource> = [
       ],
     },
   },
+  {
+    href: '/bandeiras-do-brasil',
+    name: 'Bandeiras dos Estados do Brasil',
+    description:
+      'API com as bandeiras dos estados do Brasil em quatro formatos diferentes',
+    icon: UsersIcon,
+    pattern: {
+      y: 22,
+      squares: [[0, 1]],
+    },
+  },
   // {
   //   href: '/messages',
   //   name: 'Messages',

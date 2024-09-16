@@ -1,0 +1,94 @@
+export const metadata = {
+  title: 'Bandeiras dos Estados Brasileiros - API',
+  description:
+    'Acesse imagens de bandeiras dos estados brasileiros em diferentes formatos.',
+}
+
+# Bandeiras dos Estados Brasileiros - API
+
+A API de Bandeiras dos Estados Brasileiros é uma API que disponibiliza imagens das bandeiras de todos os estados brasileiros em formato `.svg`, com diferentes opções de visualização: completa, arredondada, quadrada arredondada e circular. {{ className: 'lead' }}
+
+> A API de Bandeiras dos Estados Brasileiros é uma API pública e gratuita, ideal para projetos que necessitem de representações visuais das bandeiras dos estados brasileiros.
+
+Se você encontrar quaisquer inconsistências ou erros nas imagens, por favor, entre em contato conosco para que possamos corrigi-los o mais rápido possível 🚀
+
+## Créditos
+
+As imagens das bandeiras dos estados brasileiros foram criadas por (Pierre Lapalu)[https://github.com/pierrelapalu/icones-bandeiras-br-uf]. Nós as disponibilizamos em nossa API para facilitar o acesso e uso em projetos de desenvolvimento.
+
+## Autenticação
+
+A API de Bandeiras dos Estados Brasileiros não requer autenticação para acessar os endpoints.
+
+## Rate Limit
+
+A API de Bandeiras dos Estados Brasileiros possui um limite de taxa de 100 solicitações por minuto. Se você exceder esse limite, receberá um código de status 429. O uso indiscriminado também poderá levar ao bloqueio do seu IP.
+
+## Base URL
+
+A URL base para a API de bandeiras dos estados brasileiros do Codante.io é `https://apis.codante.io/bandeiras-dos-estados`.
+
+---
+
+## Lista de Bandeiras {{ tag: 'GET', label: '/' }}
+
+Este endpoint lista todas as bandeiras dos estados brasileiros com informações básicas como UF, nome completo do estado e URLs para download das diferentes versões das imagens.
+
+<Row>
+  <Col>
+  
+      A lista de bandeiras é retornada em formato JSON. Cada item da lista contém as seguintes informações:
+
+    - `uf`: sigla do estado
+    - `name`: nome completo do estado
+    - `flag_url`: URL da bandeira original
+    - `flag_url_rounded`: URL da bandeira arredondada
+    - `flag_url_square`: URL da bandeira quadrada arredondada
+    - `flag_url_circle`: URL da bandeira circular
+
+  </Col>
+  <Col sticky>
+    <CodeGroup title="Request" tag="GET" label="/">
+
+        ```bash {{ title: 'cURL' }}
+          curl https://apis.codante.io/bandeiras-dos-estados
+        ```
+
+        ```js
+          const response = await fetch('https://apis.codante.io/bandeiras-dos-estados')
+          const flags = await response.json()
+        ```
+      </CodeGroup>
+
+      ```json {{ title: 'Response' }}
+      [
+        {
+          "uf": "AC",
+          "name": "Acre",
+          "flag_url": "https://assets.codante.io/codante-apis/bandeiras-do-brasil/ac-full.svg",
+          "flag_url_rounded": "https://assets.codante.io/codante-apis/bandeiras-do-brasil/ac-rounded.svg",
+          "flag_url_square": "https://assets.codante.io/codante-apis/bandeiras-do-brasil/ac-square-rounded.svg",
+          "flag_url_circle": "https://assets.codante.io/codante-apis/bandeiras-do-brasil/ac-circle.svg"
+        },
+        {
+          "uf": "AL",
+          "name": "Alagoas",
+          "flag_url": "https://assets.codante.io/codante-apis/bandeiras-do-brasil/al-full.svg",
+          "flag_url_rounded": "https://assets.codante.io/codante-apis/bandeiras-do-brasil/al-rounded.svg",
+          "flag_url_square": "https://assets.codante.io/codante-apis/bandeiras-do-brasil/al-square-rounded.svg",
+          "flag_url_circle": "https://assets.codante.io/codante-apis/bandeiras-do-brasil/al-circle.svg"
+        },
+        {
+          "uf": "AP",
+          "name": "Amapá",
+          "flag_url": "https://assets.codante.io/codante-apis/bandeiras-do-brasil/ap-full.svg",
+          "flag_url_rounded": "https://assets.codante.io/codante-apis/bandeiras-do-brasil/ap-rounded.svg",
+          "flag_url_square": "https://assets.codante.io/codante-apis/bandeiras-do-brasil/ap-square-rounded.svg",
+          "flag_url_circle": "https://assets.codante.io/codante-apis/bandeiras-do-brasil/ap-circle.svg"
+        },
+        // ...
+      ]
+      ```
+
+    </Col>
+</Row>
