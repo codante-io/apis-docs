@@ -246,13 +246,17 @@ export const navigation: Array<NavGroup> = [
     links: [
       // { title: 'Frases Motivacionais', href: '/frases-motivacionais' },
       { title: '📦 Orders API (Pedidos)', href: '/orders-api' },
+      { title: '⭐ Reviews API (Avaliações)', href: '/reviews-api' },
       { title: '👥 API de Cadastro de Usuário', href: '/register-user' },
       { title: '🇧🇷 Atletas Brasileiros - DB', href: '/atletas-brasileiros' },
       {
         title: '💸 Gastos dos Senadores do Brasil',
         href: '/gastos-senadores',
       },
-      { title: '⛳ Bandeiras dos Estados Brasileiros', href: '/bandeiras-dos-estados' },
+      {
+        title: '⛳ Bandeiras dos Estados Brasileiros',
+        href: '/bandeiras-dos-estados',
+      },
     ],
   },
   {
