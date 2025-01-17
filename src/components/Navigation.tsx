@@ -247,6 +247,7 @@ export const navigation: Array<NavGroup> = [
       // { title: 'Frases Motivacionais', href: '/frases-motivacionais' },
       { title: '📦 Orders API (Pedidos)', href: '/orders-api' },
       { title: '⭐ Reviews API (Avaliações)', href: '/reviews-api' },
+      { title: '💼 Jobs API (Vagas)', href: '/jobs-api' },
       { title: '👥 API de Cadastro de Usuário', href: '/register-user' },
       { title: '🇧🇷 Atletas Brasileiros - DB', href: '/atletas-brasileiros' },
       {

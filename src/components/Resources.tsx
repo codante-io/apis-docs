@@ -8,7 +8,7 @@ import {
   useMotionValue,
 } from 'framer-motion'
 
-import { MdOutlineSportsHandball } from 'react-icons/md'
+import { MdBolt, MdOutlineBolt, MdOutlineSportsHandball } from 'react-icons/md'
 
 import { GridPattern } from '@/components/GridPattern'
 import { Heading } from '@/components/Heading'
@@ -18,9 +18,10 @@ import { UserIcon } from '@/components/icons/UserIcon'
 import { UsersIcon } from '@/components/icons/UsersIcon'
 import { CartIcon } from './icons/CartIcon'
 import { BoltIcon } from './icons/BoltIcon'
-import { CiMoneyCheck1 } from 'react-icons/ci'
-import { FcMoneyTransfer } from 'react-icons/fc'
-import { PiMoneyWavyDuotone } from 'react-icons/pi'
+import { CiFlag1, CiMoneyCheck1, CiShoppingBasket } from 'react-icons/ci'
+import { FcBriefcase, FcMoneyTransfer } from 'react-icons/fc'
+import { PiBriefcase, PiBriefcaseDuotone, PiBriefcaseLight, PiBriefcaseMetalDuotone, PiCarrotDuotone, PiLightning, PiMoney, PiMoneyDuotone, PiMoneyWavyDuotone, PiStar, PiStarBold, PiUserCircleDuotone } from 'react-icons/pi'
+import { BriefcaseIcon } from './icons/Briefcase'
 
 interface Resource {
   href: string
@@ -39,7 +40,7 @@ const resources: Array<Resource> = [
     name: 'Api de Pedidos (Orders API)',
     description:
       'Aprenda sobre o modelo de pedidos e como criar, recuperar, atualizar, excluir e listar pedidos.',
-    icon: CartIcon,
+    icon: CiShoppingBasket,
     pattern: {
       y: 16,
       squares: [
@@ -53,7 +54,7 @@ const resources: Array<Resource> = [
     name: 'Api de Cadastro de Usuário',
     description:
       'Um endpoint simples para validar e simular o cadastro de usuários em sua aplicação.',
-    icon: UserIcon,
+    icon: PiUserCircleDuotone,
     pattern: {
       y: -6,
       squares: [
@@ -63,10 +64,32 @@ const resources: Array<Resource> = [
     },
   },
   {
+    href: '/reviews-api',
+    name: 'Api de Reviews',
+    description:
+      'A API de avaliações simula uma lista de avaliações de produtos em uma plataforma.',
+    icon: PiStar,
+    pattern: {
+      y: 12,
+      squares: [[1, 0], [0, 1]],
+    },
+  },
+  {
+    href: '/jobs-api',
+    name: 'Api de Vagas (Jobs API)',
+    description:
+      'Uma API com uma listatem hipotética de vagas e com possibilidade de criar, listar e apagar vagas.',
+    icon: BriefcaseIcon,
+    pattern: {
+      y: 12,
+      squares: [[1, 0], [0, 1]],
+    },
+  },
+  {
     href: '/olympic-games',
     name: 'Api dos Jogos Olímpicos',
     description: 'Dados dos Jogos Olímpicos de Paris 2024',
-    icon: BoltIcon,
+    icon: PiLightning,
     pattern: {
       y: 22,
       squares: [[0, 1]],
@@ -77,7 +100,7 @@ const resources: Array<Resource> = [
     name: 'Olympics 2025 API (English)',
     description:
       'Full data for events, venues, countries and games for Olympics 2024',
-    icon: BoltIcon,
+    icon: PiLightning,
     pattern: {
       y: 22,
       squares: [[0, 1]],
@@ -99,7 +122,7 @@ const resources: Array<Resource> = [
     name: 'Gastos dos Senadores',
     description:
       'API com os gastos dos senadores do Brasil, com dados abertos e atualizados - incluindo partidos, estados e mais',
-    icon: PiMoneyWavyDuotone,
+    icon: PiMoney,
     pattern: {
       y: 32,
       squares: [
@@ -113,12 +136,13 @@ const resources: Array<Resource> = [
     name: 'Bandeiras dos Estados do Brasil',
     description:
       'API com as bandeiras dos estados do Brasil em quatro formatos diferentes',
-    icon: UsersIcon,
+    icon: CiFlag1,
     pattern: {
       y: 22,
       squares: [[0, 1]],
     },
   },
+
   // {
   //   href: '/messages',
   //   name: 'Messages',
@@ -149,7 +173,7 @@ const resources: Array<Resource> = [
 function ResourceIcon({ icon: Icon }: { icon: Resource['icon'] }) {
   return (
     <div className="flex h-7 w-7 items-center justify-center rounded-full bg-zinc-900/5 ring-1 ring-zinc-900/25 backdrop-blur-[2px] transition duration-300 group-hover:bg-white/50 group-hover:ring-zinc-900/25 dark:bg-white/7.5 dark:ring-white/30 dark:group-hover:bg-blue-300/10 dark:group-hover:ring-blue-400">
-      <Icon className="h-5 w-5 fill-zinc-700/10 stroke-zinc-700 transition-colors duration-300 group-hover:stroke-zinc-900 dark:fill-white/10 dark:stroke-zinc-400 dark:group-hover:fill-blue-300/50 dark:group-hover:stroke-blue-400" />
+      <Icon className="h-5 w-5 fill-zinc-700/40 stroke-zinc-700 transition-colors duration-300 group-hover:stroke-zinc-900 dark:fill-white/40 dark:stroke-zinc-400 dark:group-hover:fill-blue-300/50 dark:group-hover:stroke-blue-400" />
     </div>
   )
 }
