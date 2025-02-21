@@ -132,7 +132,7 @@ const resources: Array<Resource> = [
     },
   },
   {
-    href: '/bandeiras-do-brasil',
+    href: '/bandeiras-dos-estados',
     name: 'Bandeiras dos Estados do Brasil',
     description:
       'API com as bandeiras dos estados do Brasil em quatro formatos diferentes',
@@ -143,31 +143,7 @@ const resources: Array<Resource> = [
     },
   },
 
-  // {
-  //   href: '/messages',
-  //   name: 'Messages',
-  //   description:
-  //     'Learn about the message model and how to create, retrieve, update, delete, and list messages.',
-  //   icon: EnvelopeIcon,
-  //   pattern: {
-  //     y: 32,
-  //     squares: [
-  //       [0, 2],
-  //       [1, 4],
-  //     ],
-  //   },
-  // },
-  // {
-  //   href: '/groups',
-  //   name: 'Groups',
-  //   description:
-  //     'Learn about the group model and how to create, retrieve, update, delete, and list groups.',
-  //   icon: UsersIcon,
-  //   pattern: {
-  //     y: 22,
-  //     squares: [[0, 1]],
-  //   },
-  // },
+
 ]
 
 function ResourceIcon({ icon: Icon }: { icon: Resource['icon'] }) {
