@@ -258,6 +258,10 @@ export const navigation: Array<NavGroup> = [
         title: '⛳ Bandeiras dos Estados Brasileiros',
         href: '/bandeiras-dos-estados',
       },
+      {
+        title: '🎊 Bloquinhos de Carnaval 2025',
+        href: '/bloquinhos-2025',
+      },
     ],
   },
   {

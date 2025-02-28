@@ -1,26 +1,19 @@
 'use client'
 
-import Link from 'next/link'
 import {
   type MotionValue,
   motion,
   useMotionTemplate,
   useMotionValue,
 } from 'framer-motion'
+import Link from 'next/link'
 
-import { MdBolt, MdOutlineBolt, MdOutlineSportsHandball } from 'react-icons/md'
+import { MdMasks, MdOutlineSportsHandball } from 'react-icons/md'
 
 import { GridPattern } from '@/components/GridPattern'
 import { Heading } from '@/components/Heading'
-import { ChatBubbleIcon } from '@/components/icons/ChatBubbleIcon'
-import { EnvelopeIcon } from '@/components/icons/EnvelopeIcon'
-import { UserIcon } from '@/components/icons/UserIcon'
-import { UsersIcon } from '@/components/icons/UsersIcon'
-import { CartIcon } from './icons/CartIcon'
-import { BoltIcon } from './icons/BoltIcon'
-import { CiFlag1, CiMoneyCheck1, CiShoppingBasket } from 'react-icons/ci'
-import { FcBriefcase, FcMoneyTransfer } from 'react-icons/fc'
-import { PiBriefcase, PiBriefcaseDuotone, PiBriefcaseLight, PiBriefcaseMetalDuotone, PiCarrotDuotone, PiLightning, PiMoney, PiMoneyDuotone, PiMoneyWavyDuotone, PiStar, PiStarBold, PiUserCircleDuotone } from 'react-icons/pi'
+import { CiFlag1, CiShoppingBasket } from 'react-icons/ci'
+import { PiConfetti, PiLightning, PiMoney, PiStar, PiUserCircleDuotone } from 'react-icons/pi'
 import { BriefcaseIcon } from './icons/Briefcase'
 
 interface Resource {
@@ -142,8 +135,16 @@ const resources: Array<Resource> = [
       squares: [[0, 1]],
     },
   },
-
-
+  {
+    href: '/bloquinhos-2025',
+    name: 'Bloquinhos de Carnaval 2025',
+    description: 'API com a programação dos Bloquinhos de Carnaval 2025 em 10 cidades',
+    icon: PiConfetti,
+    pattern: {
+      y: 22,
+      squares: [[0, 1]],
+    },
+  },
 ]
 
 function ResourceIcon({ icon: Icon }: { icon: Resource['icon'] }) {
