@@ -1,0 +1,108 @@
+export const metadata = {
+  title: 'Legado Feminino',
+  description: 'API sobre 100 mulheres que marcaram a história',
+}
+
+# Legado Feminino - API
+
+A API sobre 100 mulheres que marcaram a história é uma API que fornece informações sobre os feitos das principais mulheres históricas do mundo. A API responde com um código de status 200 para solicitações bem-sucedidas, fornecendo recursos de informações no formato JSON, cada um contendo informações detalhadas como ID referente a mulher, nome, ano morte, ano de nascimento e feito histórico.{{ className: 'lead' }}
+
+Para solicitações inválidas, a API retorna um código de status 422, garantindo um feedback claro sobre erros nos parâmetros fornecidos.{{ className: 'lead' }}
+
+> A API sobre 100 mulheres que marcaram a história é uma API pública e gratuita, ideal para projetos que necessitem de informações de mulheres que mudaram a história.
+
+Se você encontrar quaisquer inconsistências ou erros nas informações, por favor, entre em contato conosco para que possamos corrigi-los o mais rápido possível 🚀
+
+## Autenticação
+
+A API sobre 100 mulheres que marcaram a história não requer autenticação para acessar os dados.
+
+## Rate Limit
+
+A API sobre 100 mulheres que marcaram a história possui um limite de taxa de 100 solicitações por minuto. Se você exceder esse limite, receberá um código de status 429. O uso indiscriminado também poderá levar ao bloqueio do seu IP.
+
+## Base URL
+
+A URL base para a API sobre 100 mulheres que marcaram a história é `https://apis.codante.io/api/legadoFeminino`.
+
+---
+
+## Lista de mulheres notáveis {{ tag: 'GET', label: '/legadofeminino/woamn' }}
+
+Este endpoint lista todas as mulheres e suas informações dos estados brasileiros com informações básicas como id, nome,  feito histórico, ano morte e de nascimento.
+
+<Row>
+  <Col>
+  
+      A lista de mulheres é retornada em formato JSON. Cada pessoa da lista contém as seguintes informações:
+
+  ### Propriedades
+
+<Properties>
+  <Property name="id" type="integer">
+    Identificador único da mulher.
+  </Property>
+  <Property name="nome" type="string">
+    Nome referente a mulher.
+  </Property>
+  <Property name="ano_nascimento" type="string">
+    Ano de nascimento
+  </Property>
+  <Property name="ano_morte" type="string">
+    Ano da morte da mulher, poden ser null em alguns casos.
+  </Property>
+  <Property name="contribuicao" type="string">
+    Contribuição feita para a história
+  </Property>
+</Properties>
+
+  </Col>
+  <Col sticky>
+    <CodeGroup title="Request" tag="GET" label="/legadofeminino/woman">
+
+        ```bash {{ title: 'cURL' }}
+          curl https://apis.codante.io/legadofeminino/woman
+        ```
+
+        ```js
+          const response = await fetch('https://apis.codante.io/legadofeminino/woman)
+          const flags = await response.json()
+        ```
+      </CodeGroup>
+
+      ```json {{ title: 'Response' }}
+      [
+       {
+          "id": 1,
+          "nome": "Cleópatra",
+          "ano_nascimento": "69 a.C.",
+          "ano_morte": "30 a.C.",
+          "contribuicao": "Última rainha da dinastia ptolomaica do Egito, desempenhou um papel crucial na política do Mediterrâneo. Sua inteligência, habilidades diplomáticas e relacionamentos estratégicos com líderes romanos como Júlio César e Marco Antônio marcaram um período de prosperidade e poder para o Egito."
+          },
+          {
+          "id": 2,
+          "nome": "Tomoe Gozen",
+          "ano_nascimento": "1157",
+          "ano_morte": "1247",
+          "contribuicao": "Foi uma guerreira samurai japonesa do final do século XII, conhecida por sua bravura e habilidades excepcionais em batalha. Ela lutou ao lado de Minamoto no Yoshinaka durante as Guerras Genpei e é lembrada como uma figura lendária na história do Japão feudal"
+          },
+          {
+          "id": 3,
+          "nome": "Joana D'Arc",
+          "ano_nascimento": "1412",
+          "ano_morte": "1431",
+          "contribuicao": "Líder militar na Guerra dos Cem Anos e santa católica."
+          },
+          {
+          "id": 4,
+          "nome": "Sor Juana Inês de la Cruz",
+          "ano_nascimento": "1648",
+          "ano_morte": "1695",
+          "contribuicao": "Escritora e filósofa mexicana, defensora da educação feminina."
+          },
+        // ...
+      ]
+      ```
+
+    </Col>
+</Row>

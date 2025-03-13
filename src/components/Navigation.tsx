@@ -262,6 +262,10 @@ export const navigation: Array<NavGroup> = [
         title: '🎊 Bloquinhos de Carnaval 2025',
         href: '/bloquinhos-2025',
       },
+      {
+        title: '🙋🏽‍♀️ API sobre o legado feminino',
+        href: '/legado-feminino',
+      },
     ],
   },
   {
