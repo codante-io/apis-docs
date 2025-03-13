@@ -13,7 +13,7 @@ import { MdMasks, MdOutlineSportsHandball } from 'react-icons/md'
 import { GridPattern } from '@/components/GridPattern'
 import { Heading } from '@/components/Heading'
 import { CiFlag1, CiShoppingBasket } from 'react-icons/ci'
-import { PiConfetti, PiLightning, PiMoney, PiStar, PiUserCircleDuotone } from 'react-icons/pi'
+import { PiConfetti, PiLightning, PiMoney, PiStar, PiUserCircleDuotone, PiCrown } from 'react-icons/pi'
 import { BriefcaseIcon } from './icons/Briefcase'
 
 interface Resource {
@@ -145,6 +145,16 @@ const resources: Array<Resource> = [
       squares: [[0, 1]],
     },
   },
+  {
+    href: '/legado-feminino',
+    name: 'API do legado feminino',
+    description: 'Base de dados composta por 100 mulheres que marcaram a história',
+    icon: PiCrown,
+    pattern: {
+      y: 22,
+      squares: [[0, 1]],
+    }
+  }
 ]
 
 function ResourceIcon({ icon: Icon }: { icon: Resource['icon'] }) {
