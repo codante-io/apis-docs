@@ -23,11 +23,11 @@ A API possui um limite de 100 solicitações por minuto. Se você exceder esse l
 
 ## Base URL
 
-A URL base para a API sobre 100 mulheres que marcaram a história é `https://apis.codante.io/api/legadoFeminino`.
+A URL base para a API sobre 100 mulheres que marcaram a história é `https://apis.codante.io/api/legado-feminino/women`.
 
 ---
 
-## Lista de mulheres notáveis {{ tag: 'GET', label: '/legadofeminino/woman' }}
+## Lista de mulheres notáveis {{ tag: 'GET', label: '/api/legado-feminino/women' }}
 
 Este endpoint lista todas as mulheres e suas informações com informações básicas como id, nome, feito histórico, ano de morte e de nascimento.
 
@@ -58,16 +58,17 @@ Este endpoint lista todas as mulheres e suas informações com informações bá
 
   </Col>
   <Col sticky>
-    <CodeGroup title="Request" tag="GET" label="/legadofeminino/woman">
+    <CodeGroup title="Request" tag="GET" label="/api/legado-feminino/women">
 
         ```bash {{ title: 'cURL' }}
-          curl https://apis.codante.io/legadofeminino/woman
+          curl https://apis.codante.io/api/legado-feminino/women
         ```
 
         ```js
-          const response = await fetch('https://apis.codante.io/legadofeminino/woman)
+          const response = await fetch('https://apis.codante.io/api/legado-feminino/women)
           const women = await response.json()
         ```
+
       </CodeGroup>
 
       ```json {{ title: 'Response' }}
